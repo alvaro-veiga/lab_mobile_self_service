@@ -1,4 +1,4 @@
-# Nome do Projeto
+# Sobre o Projeto
 
 lab-mobile-self-service. Aplicação mobile desenvolvida em flutter para atendimento de clinicas médicas.
 
