@@ -28,3 +28,4 @@ migrate_working_dir/
 .dart_tool/
 build/
 lab_test/
+lab_self_service/config/env.json

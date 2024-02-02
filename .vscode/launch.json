@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "lab_core DEF",
+            "name": "lab_core DEV",
             "cwd": "lab_core",
             "request": "launch",
             "type": "dart"
