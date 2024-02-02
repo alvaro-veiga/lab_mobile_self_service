@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_self_service/src/core/env.dart';
 import 'package:lab_core/lab_core.dart';
+import 'package:lab_self_service/src/pages/splash/splash_page.dart';
 
 void main() {
   runApp(const LabClinicasSelfServiceApp());
@@ -17,7 +18,7 @@ class LabClinicasSelfServiceApp extends StatelessWidget {
       title: 'Lab Clinicas Auto Atendimento',
       pagesBuilder: [
         FlutterGetItPageBuilder(
-          page: (_) => const MyHomePage(title: 'Starte Page'), 
+          page: (_) => const SplashPage(), 
           path: '/',
           )
       ],  
