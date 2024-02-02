@@ -3,6 +3,7 @@ import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_self_service/src/core/env.dart';
 import 'package:lab_core/lab_core.dart';
 import 'package:lab_self_service/src/pages/splash/splash_page.dart';
+import 'package:lab_self_service/src/bindings/lab_clinicas_application_binding.dart';
 
 void main() {
   runApp(const LabClinicasSelfServiceApp());
@@ -16,6 +17,7 @@ class LabClinicasSelfServiceApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return LabClinicasCoreConfig(
       title: 'Lab Clinicas Auto Atendimento',
+      bindings: LabClinicasApplicationBinding(),
       pagesBuilder: [
         FlutterGetItPageBuilder(
           page: (_) => const SplashPage(), 
