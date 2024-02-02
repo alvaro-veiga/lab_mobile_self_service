@@ -39,10 +39,6 @@ class LabClinicasCoreConfig extends StatelessWidget {
     return FlutterGetIt(
       debugMode: true,
 
-      bindingsBuilder: () => [
-        Bind.lazySingleton((i) => 'batata')
-      ],
-
       // adiciona as dependências para a aplicação
       bindings: bindings,
 
