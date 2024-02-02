@@ -18,8 +18,7 @@ class UserInterfaceRepository implements UserRepository {
   final RestClient restClient;
 
   @override
-  Future<Either<AuthExeption, String>> login(
-    String email, String password) async {
+  Future<Either<AuthExeption, String>> login(String email, String password) async {
       try{
         final Response(data: {'access_token': access_token}) = 
           await restClient.unauth.post('/auth', data: {
