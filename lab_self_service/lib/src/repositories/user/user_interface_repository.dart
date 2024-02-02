@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:lab_core/lab_core.dart';
@@ -29,9 +30,11 @@ class UserInterfaceRepository implements UserRepository {
         return Right(access_token);
       } on DioException catch(e, s) {
         log('Erro ao fazer login', error: e, stackTrace: s);
-
+        return switch(e) {
+          DioException(requestOptions: Response(statusCode: HttpStatus.forbidden)) =>
+            Left(AuthUnauthorizedExeption()),
+            _ => Left(AuthErrorExeption(message:'Erro ao fazer login'))
+        };
       }
-
   }
-  
 }	
