@@ -9,6 +9,7 @@ import 'package:lab_core/src/fp/either.dart';
 
 import './user_repository.dart';
 
+// Essa classe é responsável por implementar o contrato de UserRepository
 class UserInterfaceRepository implements UserRepository {
 
   UserInterfaceRepository({
