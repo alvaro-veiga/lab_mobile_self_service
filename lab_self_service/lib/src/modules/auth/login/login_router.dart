@@ -1,7 +1,7 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_getit/flutter_getit.dart';
-import 'package:lab_self_service/src/service/user_login_service.dart';
-import 'package:lab_self_service/src/service/user_login_service_interface.dart';
+import 'package:lab_self_service/src/service/login/user_login_service.dart';
+import 'package:lab_self_service/src/service/login/user_login_service_interface.dart';
 import './login_controller.dart';
 import './login_page.dart';
 

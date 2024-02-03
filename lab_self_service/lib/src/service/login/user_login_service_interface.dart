@@ -1,4 +1,4 @@
-import 'package:lab_self_service/src/service/user_login_service.dart';
+import 'package:lab_self_service/src/service/login/user_login_service.dart';
 import 'package:lab_self_service/src/repositories/user/user_repository.dart';
 import 'package:lab_core/lab_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
