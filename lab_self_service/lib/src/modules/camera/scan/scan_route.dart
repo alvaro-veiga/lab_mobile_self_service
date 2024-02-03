@@ -8,5 +8,4 @@ class CameraRoute extends FlutterGetItModulePageRouter {
   // TODO: implement view
   WidgetBuilder get view => throw UnimplementedError();
 
-
 }

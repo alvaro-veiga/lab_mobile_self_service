@@ -2,6 +2,7 @@ import 'package:asyncstate/asyncstate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_core/src/loader/lab_clinicas_loader.dart';
+import 'package:lab_core/src/theme/lab_clinicas_theme.dart';
 
 
 // configuração do core para aplicações externas
@@ -60,6 +61,8 @@ class LabClinicasCoreConfig extends StatelessWidget {
             // retorna o MaterialApp com as rotas e o observer para checar a navegação do 
             // usuário sobre as aplicações
             return MaterialApp(
+              theme: LabClinicasTheme.lightTheme,
+              darkTheme: LabClinicasTheme.darkTheme,
               navigatorObservers: [navigationObserver],
               routes: routes,
               title: title,
