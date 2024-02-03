@@ -29,11 +29,11 @@ final class LabClinicasTheme {
         color: blueColor,
         fontWeight: FontWeight.w400,
       ),
-      border: OutlineInputBorder(),
+      border: const OutlineInputBorder(),
       enabledBorder: _defaultInputBorder,
       focusedBorder: _defaultInputBorder,
       errorBorder: _defaultInputBorder.copyWith(
-        borderSide: BorderSide(color: Colors.red),
+        borderSide: const BorderSide(color: Colors.red),
       ),
     ),
   );
