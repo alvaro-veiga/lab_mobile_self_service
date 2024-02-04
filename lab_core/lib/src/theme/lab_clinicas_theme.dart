@@ -36,8 +36,35 @@ final class LabClinicasTheme {
         borderSide: const BorderSide(color: Colors.red),
       ),
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
+        backgroundColor: blueColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        textStyle: const TextStyle(
+          fontFamily: 'Montserrat', 
+          fontSize: 16, 
+          fontWeight: FontWeight.w700
+          ),
+      ),
+    ),
   );
-
   static final darkTheme = lightTheme;
-
+  static final titleStyle = TextStyle(
+    color: blueColor,
+    fontSize: 32,
+    fontWeight: FontWeight.w900,
+  );
+  static final titleSmallStyle = TextStyle(
+    color: blueColor,
+    fontSize: 24,
+    fontWeight: FontWeight.w900,
+  );
+  static final subTitleSmallStyle = TextStyle(
+    color: blueColor,
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  );
 }

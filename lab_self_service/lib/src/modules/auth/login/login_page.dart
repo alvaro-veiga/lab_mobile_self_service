@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab_core/lab_core.dart';
 
 class LoginPage extends StatelessWidget {
 
@@ -33,7 +34,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      const Text('Login'),
+                      Text('Login', style: LabClinicasTheme.titleStyle,),
                       const SizedBox(height: 32,),
                       TextFormField(decoration: const InputDecoration(label: Text('E-mail')),),
                       const SizedBox(height: 24,),
