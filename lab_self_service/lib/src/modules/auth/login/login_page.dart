@@ -14,11 +14,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  //controllers para os campos de texto
+//controllers para os campos de texto
   final emailEC = TextEditingController();
   final passwordEC = TextEditingController();
   final formKey = GlobalKey<FormState>();
-//  final controller = Injector.get<LoginController>();
+  final controller = Injector.get<LoginController>();
 
   //snippet para evitar memory leak, ou seja, vazamento de memória
   @override
@@ -77,13 +77,13 @@ class _LoginPageState extends State<LoginPage> {
                             label: const Text('Senha'),
                             suffixIcon: IconButton(
                               onPressed: () {
- //                               controller.toggleObscurePassword();
+                               controller.toggleObscurePassword();
                               },
                               icon: const Icon(Icons.visibility)
                               )
                             ),
-                          obscureText: true,
-                          controller: emailEC,
+                          obscureText: controller.obscurePassword,
+                          controller: passwordEC,
                           validator: Validatorless.multiple(
                               [
                                 Validatorless.required('Senha obrigatório'),
