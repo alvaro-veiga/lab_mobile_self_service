@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_core/lab_core.dart';
+import 'package:lab_self_service/src/modules/auth/login/login_controller.dart';
+import 'package:signals_flutter/signals_flutter.dart';
 import 'package:validatorless/validatorless.dart';
 
 class LoginPage extends StatefulWidget {
@@ -15,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   final emailEC = TextEditingController();
   final passwordEC = TextEditingController();
   final formKey = GlobalKey<FormState>();
+//  final controller = Injector.get<LoginController>();
 
   //snippet para evitar memory leak, ou seja, vazamento de memória
   @override
@@ -66,16 +70,28 @@ class _LoginPageState extends State<LoginPage> {
                         decoration: const InputDecoration(label: Text('E-mail')),
                         ),
                       const SizedBox(height: 24,),
-                      TextFormField(
-                        decoration: const InputDecoration(label: Text('Senha')),
-                        obscureText: true,
-                        controller: emailEC,
-                        validator: Validatorless.multiple(
-                            [
-                              Validatorless.required('Senha obrigatório'),
-                            ]
-                          ),
-                        ),
+                      Watch (
+                        (_) {
+                          return TextFormField(
+                            decoration:  InputDecoration(
+                            label: const Text('Senha'),
+                            suffixIcon: IconButton(
+                              onPressed: () {
+ //                               controller.toggleObscurePassword();
+                              },
+                              icon: const Icon(Icons.visibility)
+                              )
+                            ),
+                          obscureText: true,
+                          controller: emailEC,
+                          validator: Validatorless.multiple(
+                              [
+                                Validatorless.required('Senha obrigatório'),
+                              ]
+                            ),
+                          );
+                        }
+                      ),
                       const SizedBox(height: 32,),
                       SizedBox(
                         width: sizeOf.width * .8,
@@ -83,6 +99,9 @@ class _LoginPageState extends State<LoginPage> {
                         child:ElevatedButton(
                           onPressed: () {
                             final valid = formKey.currentState?.validate() ?? false;
+                            if(valid) {
+                              
+                            }
                           }, 
                           child: const Text('Entrar')),
                         )
