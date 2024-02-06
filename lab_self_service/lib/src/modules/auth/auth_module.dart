@@ -1,6 +1,7 @@
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:flutter/material.dart';
 import 'package:lab_self_service/src/modules/auth/login/login_page.dart';
+import 'package:lab_self_service/src/modules/auth/login/login_router.dart';
 import 'package:lab_self_service/src/repositories/user/user_interface_repository.dart';
 import 'package:lab_self_service/src/repositories/user/user_repository.dart';
 
@@ -18,6 +19,6 @@ class AuthModule extends FlutterGetItModule {
 
   @override
   Map<String, WidgetBuilder> get pages => {
-    '/login': (_) => const LoginPage()
+    '/login': (_) =>  LoginRouter()
   };
 }
