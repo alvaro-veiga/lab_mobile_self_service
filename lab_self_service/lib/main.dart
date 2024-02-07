@@ -6,6 +6,8 @@ import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_self_service/src/core/env.dart';
 import 'package:lab_core/lab_core.dart';
 import 'package:lab_self_service/src/modules/auth/auth_module.dart';
+import 'package:lab_self_service/src/modules/home/home_module.dart';
+import 'package:lab_self_service/src/modules/scan/scan_module.dart';
 import 'package:lab_self_service/src/pages/splash/splash_page.dart';
 import 'package:lab_self_service/src/bindings/lab_clinicas_application_binding.dart';
 
@@ -35,7 +37,7 @@ class LabClinicasSelfServiceApp extends StatelessWidget {
           path: '/',
           )
       ],
-      modules: [AuthModule()],  
+      modules: [AuthModule(), HomeModule(), ScanModule()],  
     );
   }
 }
