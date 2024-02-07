@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_self_service/src/core/env.dart';
@@ -7,7 +10,14 @@ import 'package:lab_self_service/src/pages/splash/splash_page.dart';
 import 'package:lab_self_service/src/bindings/lab_clinicas_application_binding.dart';
 
 void main() {
-  runApp(const LabClinicasSelfServiceApp());
+  // Captura de erros não tratados do flutter framework
+  runZonedGuarded(() { 
+    runApp(const LabClinicasSelfServiceApp());
+  }, (error, stack) {
+    log('Erro não tratado', error: error, stackTrace: stack);
+    throw error;
+  });
+  
 }
 
 

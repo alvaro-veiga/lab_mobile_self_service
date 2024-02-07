@@ -13,12 +13,26 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPage> with MessagesViewMixin{
 //controllers para os campos de texto
   final emailEC = TextEditingController();
   final passwordEC = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final controller = Injector.get<LoginController>();
+
+  @override
+  void initState() {
+    messageListener(controller);
+    
+    //snippet para redirecionar para a tela de home caso o usuário já esteja logado
+    effect(() {
+      if(controller.logged) {
+        Navigator.of(context).pushReplacementNamed('/home');
+      }
+    });
+
+    super.initState();
+  }
 
   //snippet para evitar memory leak, ou seja, vazamento de memória
   @override
@@ -100,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: () {
                             final valid = formKey.currentState?.validate() ?? false;
                             if(valid) {
-                              
+                              controller.login(emailEC.text, passwordEC.text);
                             }
                           }, 
                           child: const Text('Entrar')),
